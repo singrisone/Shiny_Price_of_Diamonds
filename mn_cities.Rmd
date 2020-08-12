@@ -1,0 +1,21 @@
+---
+title: "Map"
+author: "Soo Ingrisone"
+date: "8/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=TRUE}
+library(leaflet)
+mn_cities <- data.frame(name = c("Minneapolis", "St.Paul", "Bloomington"),
+                        pop = c(425403 , 307695, 85578 ),
+                        lat = c(44.9778, 44.9537, 44.8408),
+                        lng = c(-93.2650, -93.0900, -93.2983))
+mn_cities %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircles(weight = 1, radius = sqrt(mn_cities$pop) * 10)
