@@ -1,0 +1,60 @@
+---
+title: "Price Range for Diamonds"
+author: "Soo Ingrisone"
+date: "8/13/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Documentation for a user 
+
+The purpose of the documentation is for a user to get started using the shiny application for the price range of diamonds.
+
+The main function of the application is to provide a user the price range information of the diamonds based on user's 4C selections (carat, cut, color and clarity). The application is interactive: 
+
+- **Carat**: the range of carat values can be chosen using slider.
+
+- **Cut, color, clarity**: one option can be selected for each category by selecting one radio button. 
+
+
+## Documentation for a user (Cont.)
+
+Once a user makes any of 4C selections, the application will automatically update its associated results on the main panel. 
+
+A user will be provided with the following information in the main panel:
+
+- **min/max** of price range 
+
+- **mean** price based on user's selections
+
+- **histogram** of the price based on the user's choices
+
+
+## File locations
+
+- Shiny site for the price range of diamonds is here:
+
+https://singrisone.shinyapps.io/PriceDiamonds/
+
+
+- R program files, documentation and R studio presenter file are stored here:
+
+https://github.com/singrisone/Shiny_Price_of_Diamonds
+
+https://rpubs.com/singrisone/648851
+
+## Data Used
+
+The data used for this application is *diamonds*, which is available via **ggplot2** package and contains the prices and other attributes of diamonds. The application utlizes the *price, carat, cut, color and clarity* of the data.
+
+```{r, echo=TRUE, comment= ''}
+library("ggplot2")
+dia <- as.data.frame(diamonds[,c(1:4,7)])
+head(dia)
+```
+
+
+
